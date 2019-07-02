@@ -1,0 +1,61 @@
+<app-particles></app-particles>
+<div class="main-div">
+  <mat-card>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+      <div class="center">
+        <div class="login-title">
+          <span>Log In</span>
+        </div>
+        <div class="title-description">
+          <span>Login here using your email and password</span>
+        </div>
+      </div>
+
+      <div class="center">
+
+        <mat-form-field class="login-input">
+          <input matInput placeholder="Email" formControlName="email">
+          <mat-icon matPrefix>
+            contact_mail
+          </mat-icon>
+        </mat-form-field>
+
+        <div *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+          <div *ngIf="loginForm.get('email').errors.required" class="error-form-message">Email is required!</div>
+          <div *ngIf="loginForm.get('email').errors.pattern" class="error-form-message">Incorrect form of email!</div>
+        </div>
+
+        <mat-form-field class="password-input">
+          <input matInput placeholder="Password" [type]="showPassword ? 'text' : 'password'" formControlName="password">
+          <mat-icon matPrefix>
+            vpn_key
+          </mat-icon>
+          <mat-icon matSuffix (click)="showPassword = !showPassword; $event.stopPropagation()">
+            {{ showPassword ? 'visibility' : 'visibility_off' }}
+          </mat-icon>
+        </mat-form-field>
+
+        <div *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+          <div *ngIf="loginForm.get('password').errors.required" class="error-form-message">Password is required!</div>
+          <div *ngIf="loginForm.get('password').errors.minlength" class="error-form-message">Password must be longer than 5!</div>
+          <div *ngIf="loginForm.get('password').errors.maxlength" class="error-form-message">Password must be shorter than 15!</div>
+        </div>
+
+      </div>
+      <br>
+
+      <div class="center">
+        <button mat-flat-button color="primary" type="submit" [disabled]="!loginForm.valid" class="btn-login">Log In</button>
+      </div>
+      <br>
+
+    </form>
+
+    <div class="sign-in-button-wrapper">
+      <button mat-stroked-button color="primary" class="btn-forgot-password">Forgot Password</button>
+      <button mat-stroked-button color="primary" class="btn-register" [routerLink]="['../register']">Sign Up</button>
+    </div>
+
+  </mat-card>
+</div>

@@ -1,0 +1,36 @@
+<app-particles></app-particles>
+
+<div class="main-div">
+  <mat-card class="card-container">
+
+    <div class="form-header-container">
+      <div class="title-wrapper">
+        <div class="register-owner-title">
+          <span>Sign Up for {{ activeLinkIndex ? 'Medical Staff' : 'Clients' }}</span>
+        </div>
+        <div class="title-description">
+          <span>Register here if you are a {{ activeLinkIndex ? 'Medical Staff' : 'Client' }}</span>
+        </div>
+      </div>
+
+      <div class="navigation-container">
+        <nav mat-tab-nav-bar>
+          <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="'./' + link.link" routerLinkActive #rla="routerLinkActive"
+             [active]="rla.isActive" [class.active-link]="rla.isActive">
+            {{link.label}}
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="register-form-container">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="sign-up-button-wrapper">
+      <button mat-stroked-button color="primary" class="btn-login" [routerLink]="['../login']">Log In</button>
+      <button mat-flat-button color="primary" class="btn-register">Sign Up</button>
+    </div>
+
+  </mat-card>
+</div>

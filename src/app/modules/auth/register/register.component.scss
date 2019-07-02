@@ -1,0 +1,87 @@
+@import "~src/styles/variables";
+
+.main-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80%;
+    min-height: 600px;
+    width: 35%;
+    min-width: 400px;
+    background: #f5f5f5;
+    padding: 0;
+
+    .form-header-container {
+      height: calc(20% + 2rem);
+      width: 100%;
+
+      .title-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1.5rem 0 .5rem 0;
+
+        .register-owner-title {
+          margin-bottom: 1rem;
+
+          span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $light-blue;
+          }
+        }
+
+        .title-description {
+          margin-bottom: 9px;
+
+          span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: $light-blue;
+          }
+        }
+      }
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1.5rem 0 1.5rem 0;
+      }
+
+      ::ng-deep .mat-tab-links a {
+        width: 50%;
+      }
+
+    }
+
+    .register-form-container {
+      height: 80%;
+      width: 74%;
+      margin-top: 9px;
+    }
+
+    .sign-up-button-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 74%;
+      margin-bottom: 2rem;
+    }
+
+    .btn- {
+      &login, &register {
+        width: 47%;
+      }
+    }
+
+  }
+}

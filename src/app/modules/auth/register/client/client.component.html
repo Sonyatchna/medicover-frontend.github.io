@@ -1,0 +1,49 @@
+<form>
+  <div class="center">
+    <mat-form-field class="firstName-input">
+      <input matInput placeholder="First Name">
+      <mat-icon matPrefix>
+        account_circle
+      </mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="secondName-input">
+      <input matInput placeholder="Second Name">
+      <mat-icon matPrefix>
+        account_circle
+      </mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="login-input">
+      <input matInput placeholder="Email">
+      <mat-icon matPrefix>
+        contact_mail
+      </mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="phone-input">
+      <input matInput placeholder="Contact Phone">
+      <mat-icon matPrefix>
+        contact_phone
+      </mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="dateOfBirth-input">
+      <input matInput placeholder="Date of Birth">
+      <mat-icon matPrefix>
+        date_range
+      </mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="password-input">
+      <input matInput placeholder="Password" [type]="showPassword ? 'text' : 'password'">
+      <mat-icon matPrefix>
+        vpn_key
+      </mat-icon>
+      <mat-icon matSuffix (click)="showPassword = !showPassword; $event.stopPropagation()">
+        {{ showPassword ? 'visibility' : 'visibility_off' }}
+      </mat-icon>
+    </mat-form-field>
+
+  </div>
+</form>

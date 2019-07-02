@@ -1,0 +1,88 @@
+@import "~src/styles/variables";
+
+.main-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  mat-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50%;
+    min-height: 400px;
+    width: 30%;
+    min-width: 400px;
+    background: #f5f5f5;
+
+    form {
+      width: 76%;
+    }
+
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .login-title {
+        margin-bottom: 1rem;
+        span {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: $light-blue;
+        }
+      }
+
+      .title-description {
+        margin-bottom: 9px;
+        span {
+          font-size: 1rem;
+          font-weight: 500;
+          color: $light-blue;
+        }
+      }
+
+      .login-input, .password-input {
+        width: 100%;
+
+        ::ng-deep .mat-form-field-infix {
+          padding-bottom: 0;
+          input {
+            padding-bottom: 6px;
+          }
+        }
+
+        mat-icon {
+          margin-right: 8px;
+          font-size: 24px;
+          cursor: pointer;
+        }
+      }
+
+      .error-form-message{
+        color: red;
+      }
+    }
+
+    .sign-in-button-wrapper {
+      display: flex;
+      width: 76%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .btn- {
+      &login {
+        width: 100%;
+      }
+      &forgot-password, &register {
+        width: 47%;
+      }
+    }
+
+  }
+
+}
