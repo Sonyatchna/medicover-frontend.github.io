@@ -25,18 +25,17 @@
   }
 }
 
-.sign-in-button-wrapper {
+.sign-up-button-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  width: 74%;
+  margin: 1rem 0 2rem;
 }
 
 .btn- {
-  &login {
-    width: 100%;
-  }
-  &forgot-password, &register {
+  &login, &register {
     width: 47%;
   }
 }

@@ -68,20 +68,5 @@
       margin-top: 9px;
     }
 
-    .sign-up-button-wrapper {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      width: 74%;
-      margin-bottom: 2rem;
-    }
-
-    .btn- {
-      &login, &register {
-        width: 47%;
-      }
-    }
-
   }
 }

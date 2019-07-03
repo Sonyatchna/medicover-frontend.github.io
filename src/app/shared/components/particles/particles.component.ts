@@ -26,7 +26,13 @@ export class ParticlesComponent implements OnInit {
           value: '#43c9c6'
         },
         shape: {
-          type: 'triangle',
+          type: 'circle',
+        },
+        size: {
+          value: 10
+        },
+        speed: {
+          value: 2
         },
         line_linked: {
           enable: true,
