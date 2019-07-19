@@ -1,6 +1,7 @@
 @import "styles/scrollbar";
 @import "styles/theme";
 @import "styles/variables";
+@import "~angular-notifier/styles.scss";
 
 html,
 body {
@@ -11,5 +12,5 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
 }

@@ -38,4 +38,8 @@ export class LoginComponent {
           this.notifier.notify('error', err)
       );
   }
+
+  forgotPass() {
+    this.notifier.notify('error', 'You forgot password!');
+  }
 }

@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NotifierModule } from 'angular-notifier';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NotifierModule } from 'angular-notifier';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    NgxMaskModule.forRoot(),
     NotifierModule.withConfig( {
       position: {
         horizontal: {

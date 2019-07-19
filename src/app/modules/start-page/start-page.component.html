@@ -1,0 +1,322 @@
+<div class="header-div">
+  <div class="header-block">
+    <header class="header">
+
+      <div class="brand-icon">
+        <img class="brand-img" src="https://medicover.ua/images/Logo.png">
+      </div>
+
+      <div class="navigation-bar">
+        <button mat-button color="primary">
+          <span class="but-sp">ANALYZES AND PRICES</span>
+        </button>
+
+        <button mat-button color="primary">
+          <span class="but-sp">DEPARTMENTS</span>
+        </button>
+
+        <button mat-button color="primary" [matMenuTriggerFor]="beforeMenu">
+          <span class="but-sp">TO PATIENTS</span>
+          <mat-icon matSuffix>
+            arrow_drop_down
+          </mat-icon>
+        </button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+          <button mat-button color="primary" class="mat-menu-item"><span>ANALYZES AT HOME</span></button>
+          <button mat-button color="primary" class="mat-menu-item"><span>PRE-ORDER</span></button>
+          <button mat-button color="primary" class="mat-menu-item"><span>PREPARATION FOR ANALYZES</span></button>
+        </mat-menu>
+
+        <button mat-button color="primary"
+        ><span class="but-sp">NEWS</span>
+        </button>
+      </div>
+
+      <div class="buttons-block">
+        <button mat-stroked-button color="primary" class="but-bl">
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+        <button mat-stroked-button color="primary" class="but-bl" [routerLink]="['../auth/login']">
+          <mat-icon>person</mat-icon>
+        </button>
+        <button mat-flat-button color="primary" class="but-res">GET RESULT</button>
+      </div>
+
+    </header>
+  </div>
+</div>
+
+
+<div class="slider-div">
+  <div class="start-page-slider">
+    <slideshow #slideShow
+      [imageUrls]="imageArray"
+      [autoPlay]="true"
+      [showArrows]="false"
+      autoPlayInterval="10000"
+      [stopAutoPlayOnSlide]="false"
+      [showDots]="true"
+      dotColor="#004d40"
+    ></slideshow>
+  </div>
+  <div class="star-page-slider-text-container" *ngFor="let text of currentText" [@fadeInOut]>
+    <div class="star-page-slider-text-container-txt">
+      <span>{{ text.additionalText }}</span>
+      <span>{{ text.upperText }}</span>
+      <span>{{ text.downText }}</span>
+    </div>
+    <div class="star-page-slider-text-container-btn">
+      <button mat-flat-button color="primary" class="but-slider">MORE DETAILS</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="discount-map-div">
+  <div class="discount-map">
+    <div class="discount">
+      <div>
+        <img src="https://esculab.com/esculab/images/site-content/register-online.jpg" class="discount-img">
+      </div>
+      <div class="discount-text">
+        <h1>How to get a 10% discount?</h1>
+        <p>Buy analyzes online and automatically get a 10% discount</p>
+      </div>
+      <div class="discount-button">
+        <button mat-flat-button color="primary" class="but-dis">MORE DETAILS</button>
+      </div>
+    </div>
+
+    <div class="map">
+      <div>
+        <img class="map-img" src="https://cdn.pixabay.com/photo/2016/10/17/18/54/world-map-1748403_960_720.png">
+      </div>
+      <div class="map-text">
+        <h1>Where to leave the analyzes?</h1>
+      </div>
+      <div class="map-button">
+        <button mat-flat-button color="primary" class="but-map">VIEW MAP</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="home-call-offer-div">
+  <div class="home-call-offer">
+
+    <div class="hm-cll-btn">
+      <div class="hm-cll-btn-text">
+        <h1>Call a nurse</h1>
+        <p>Can not you come to the laboratory?</p>
+      </div>
+      <div class="hm-cll-btn-button">
+        <button mat-flat-button color="primary" class="but-home-offer">MORE DETAILS</button>
+      </div>
+    </div>
+
+    <div class="hm-cll-btn">
+      <div class="hm-cll-btn-text">
+        <h1>Need consultation</h1>
+        <p>Do you have a question and need a consultation?</p>
+      </div>
+      <div class="hm-cll-btn-button">
+        <button mat-flat-button color="primary" class="but-call">CALL ME</button>
+      </div>
+    </div>
+
+    <div class="hm-cll-btn">
+      <div class="hm-cll-btn-text">
+        <h1>Promotions</h1>
+        <p>Be always aware of our promotions</p>
+      </div>
+      <div class="hm-cll-btn-button">
+        <button mat-flat-button color="primary" class="but-home-offer">MORE DETAILS</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="trusted-div">
+  <div class="trusted">
+    <div class="trusted-header">
+      <span>We are trusted</span>
+    </div>
+
+    <div class="trusted-block-main">
+
+      <div class="trusted-block">
+        <div class="trusted-block-img">
+          <img src="https://esculab.com/esculab/images/reviws/alternative.jpg">
+        </div>
+        <div class="trusted-block-text">
+          <div class="trusted-block-text-main">
+            <span>director`s assistant of the "Alternatyva" clinic Kachmaryk M.M.</span>
+          </div>
+          <div class="trusted-block-text-response">
+            <span>Alternatyva Clinic cooperates with the medical laboratory Medicover for a long time.
+              The continuous introduction of the best practices and standards allowed the
+              Ukrainian laboratory to reach the level of the best European laboratories.
+              We recommend Medicover as a reliable and professional laboratory in Ukraine.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trusted-block">
+        <div class="trusted-block-img">
+          <img src="https://esculab.com/esculab/images/reviws/rixos.jpg">
+        </div>
+        <div class="trusted-block-text">
+          <div class="trusted-block-text-main">
+            <span>doctor of "Rixos-Prykarpattya" Nykolaichuk B.Y.</span>
+          </div>
+          <div class="trusted-block-text-response">
+            <span>We work together for about 7 years, because the Medicover
+              laboratory performs a certain range of research specifically for patients in Rixos-Prykarpattya.
+              It is important for us to provide our patients with the results of analyzes of the highest quality
+              that we get through the medical laboratory Medicover.
+              Compliance with the strict rules of storage and transportation of biomaterials,
+              as well as modern bar-coding of the samples, ensures high quality and reliability of the results.
+              Due to well-designed logistics and state-of-the-art equipment of the Medicover laboratory,
+              the results of many studies are ready the next day!
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trusted-block">
+        <div class="trusted-block-img">
+          <img src="https://esculab.com/esculab/images/reviws/oxford-medical.jpg">
+        </div>
+        <div class="trusted-block-text">
+          <div class="trusted-block-text-main">
+            <span>director of "Oxford Medical" Matsko T.V.</span>
+          </div>
+          <div class="trusted-block-text-response">
+            <span>Our cooperation started in 2012 and continues to the present.
+              During this period thousands of tests for Oxford Medical was conducted by Medicover Laboratories.
+              Today the laboratory performs more than 820 types of research!
+              We want to note the quality and speed of research,
+              because without reliable diagnosis it is impossible to correctly diagnose!
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="news-div">
+  <div class="news">
+    <div class="news-header">
+      <span>News</span>
+    </div>
+
+    <div class="news-block-main">
+
+      <div class="news-block">
+        <div class="news-block-img">
+          <img src="https://politeka.net/wp-content/uploads/2018/07/40689cd25090c5b69c4efec4f67b7e70.jpg">
+        </div>
+        <div class="news-block-text">
+          <div class="news-block-text-main">
+            <span>World Chocolate Day</span>
+          </div>
+          <div class="news-block-text-response">
+            <span>July 11 World Chocolate Day was held !!! And so it's a great time...</span>
+          </div>
+          <div class="news-button">
+            <button mat-flat-button color="primary" class="news-btn">MORE DETAILS</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-block">
+        <div class="news-block-img">
+          <img src="https://24tv.ua/resources/photos/news/610x344_DIR/201812/1082853.jpg?201906143758">
+        </div>
+        <div class="news-block-text">
+          <div class="news-block-text-main">
+            <span>What should be in the first-aid kit?</span>
+          </div>
+          <div class="news-block-text-response">
+            <span>Self-treatment can damage your health! However, every person should ...</span>
+          </div>
+          <div class="news-button">
+            <button mat-flat-button color="primary" class="news-btn">MORE DETAILS</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-block">
+        <div class="news-block-img">
+          <img src="https://24tv.ua/resources/photos/news/610x344_DIR/201605/684771.jpg?201902113855">
+        </div>
+        <div class="news-block-text">
+          <div class="news-block-text-main">
+            <span>Is the sea useful?</span>
+          </div>
+          <div class="news-block-text-response">
+            <span>If you have not figured out where to go to rest this summer - we recommend ...</span>
+          </div>
+          <div class="news-button">
+            <button mat-flat-button color="primary" class="news-btn">MORE DETAILS</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="footer-div">
+  <div class="footer-div-a">
+
+    <div class="brand-icon">
+      <img class="brand-img" src="https://medicover.ua/images/Logo.png">
+    </div>
+
+    <div class="addresses-div">
+      <div class="addresses-text">
+        <span>You can find us at the</span>
+        <span>following addresses</span>
+      </div>
+      <div class="addresses-button">
+        <button mat-flat-button color="primary" class="but-addresses">VIEW MAP</button>
+      </div>
+    </div>
+
+    <div class="networks-div">
+      <div class="email-div">
+        <span>medicover@gmail.com</span>
+      </div>
+      <div class="buttons-div">
+        <button mat-stroked-button color="primary" class="but-f-i-y">
+          <mat-icon svgIcon="facebook"></mat-icon>
+        </button>
+        <button mat-stroked-button color="primary" class="but-f-i-y">
+          <mat-icon svgIcon="instagram"></mat-icon>
+        </button>
+        <button mat-stroked-button color="primary" class="but-f-i-y">
+          <mat-icon svgIcon="youtube"></mat-icon>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-div-b">
+    <div class="footer-div-b-text">
+      <span>© 2009-2019 | «MEDICOVER»</span>
+    </div>
+    <div class="footer-div-b-text">
+      <span>created by Sofiya Tatchyn</span>
+    </div>
+  </div>
+</div>

@@ -1,42 +1,78 @@
-<form>
+<form [formGroup]="registerClientForm" (ngSubmit)="registerClient()">
   <div class="center">
     <mat-form-field class="firstName-input">
-      <input matInput placeholder="First Name">
+      <input matInput placeholder="First Name" formControlName="firstName" mask="S*">
       <mat-icon matPrefix>
         account_circle
       </mat-icon>
     </mat-form-field>
+
+    <div *ngIf="registerClientForm.get('firstName').invalid && (registerClientForm.get('firstName').dirty || registerClientForm.get('firstName').touched)">
+      <div *ngIf="registerClientForm.get('firstName').errors.required" class="error-form-message">First name is required!</div>
+    </div>
 
     <mat-form-field class="secondName-input">
-      <input matInput placeholder="Second Name">
+      <input matInput placeholder="Second Name" formControlName="secondName" mask="S*">
       <mat-icon matPrefix>
         account_circle
       </mat-icon>
     </mat-form-field>
 
+    <div *ngIf="registerClientForm.get('secondName').invalid && (registerClientForm.get('secondName').dirty || registerClientForm.get('secondName').touched)">
+      <div *ngIf="registerClientForm.get('secondName').errors.required" class="error-form-message">Second name is required!</div>
+    </div>
+
     <mat-form-field class="login-input">
-      <input matInput placeholder="Email">
+      <input matInput placeholder="Email" formControlName="email">
       <mat-icon matPrefix>
         contact_mail
       </mat-icon>
     </mat-form-field>
 
+    <div *ngIf="registerClientForm.get('email').invalid && (registerClientForm.get('email').dirty || registerClientForm.get('email').touched)">
+      <div *ngIf="registerClientForm.get('email').errors.required" class="error-form-message">Email is required!</div>
+      <div *ngIf="registerClientForm.get('email').errors.pattern" class="error-form-message">Incorrect form of email!</div>
+    </div>
+
     <mat-form-field class="phone-input">
-      <input matInput placeholder="Contact Phone">
+      <input matInput placeholder="Contact Phone" formControlName="phone" prefix="+38 " mask="(000) 000 00 00">
       <mat-icon matPrefix>
         contact_phone
       </mat-icon>
     </mat-form-field>
 
+    <div *ngIf="registerClientForm.get('phone').invalid && (registerClientForm.get('phone').dirty || registerClientForm.get('phone').touched)">
+      <div *ngIf="registerClientForm.get('phone').errors.required" class="error-form-message">Contact phone is required!</div>
+      <div *ngIf="registerClientForm.get('phone').errors.pattern" class="error-form-message">Incorrect form of contact phone!</div>
+    </div>
+
     <mat-form-field class="dateOfBirth-input">
-      <input matInput placeholder="Date of Birth">
+      <input matInput
+             placeholder="Date of Birth"
+             formControlName="birthDate"
+             [matDatepicker]="picker"
+             [min]="minDate"
+             [max]="maxDate" disabled>
+      <mat-datepicker-toggle matSuffix [for]="picker">
+        <mat-icon matDatepickerToggleIcon>
+          arrow_drop_down
+        </mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker
+                      startView="multi-year"
+                      panelClass="example-month-picker" disabled="false">
+      </mat-datepicker>
       <mat-icon matPrefix>
         date_range
       </mat-icon>
     </mat-form-field>
 
+    <div *ngIf="registerClientForm.get('birthDate').invalid && (registerClientForm.get('birthDate').dirty || registerClientForm.get('birthDate').touched)">
+      <div *ngIf="registerClientForm.get('birthDate').errors.required" class="error-form-message">Date of birth is required!</div>
+    </div>
+
     <mat-form-field class="password-input">
-      <input matInput placeholder="Password" [type]="showPassword ? 'text' : 'password'">
+      <input matInput placeholder="Password" formControlName="password" [type]="showPassword ? 'text' : 'password'">
       <mat-icon matPrefix>
         vpn_key
       </mat-icon>
@@ -45,9 +81,15 @@
       </mat-icon>
     </mat-form-field>
 
+    <div *ngIf="registerClientForm.get('password').invalid && (registerClientForm.get('password').dirty || registerClientForm.get('password').touched)">
+      <div *ngIf="registerClientForm.get('password').errors.required" class="error-form-message">Password is required!</div>
+      <div *ngIf="registerClientForm.get('password').errors.minlength" class="error-form-message">Password must be longer than 5!</div>
+      <div *ngIf="registerClientForm.get('password').errors.maxlength" class="error-form-message">Password must be shorter than 17!</div>
+    </div>
+
     <div class="sign-up-button-wrapper">
-      <button mat-stroked-button color="primary" class="btn-login" [routerLink]="['../login']">Log In</button>
-      <button mat-flat-button color="primary" class="btn-register">Sign Up</button>
+      <button mat-stroked-button color="primary" class="btn-login" [routerLink]="['../../login']">Log In</button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="!registerClientForm.valid" class="btn-register">Sign Up</button>
     </div>
 
   </div>

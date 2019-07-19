@@ -5,8 +5,12 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'auth',
+    redirectTo: 'start-page',
     pathMatch: 'full'
+  },
+  {
+    path: 'start-page',
+    loadChildren: './modules/start-page/start-page.module#StartPageModule'
   },
   {
     path: 'auth',

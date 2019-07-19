@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RegisterFormBuilderService } from "../../../../shared/formBuildersServices/register-form-builder.service";
+import { FormGroup } from "@angular/forms";
+import { RegisterService } from '../../services/register.service';
+import { Router } from '@angular/router';
+import { NotifierService } from 'angular-notifier';
 
 export interface Position {
   value: string;
@@ -11,7 +16,7 @@ export interface Position {
   styleUrls: ['./medical-staff.component.scss']
 })
 
-export class MedicalStaffComponent implements OnInit {
+export class MedicalStaffComponent {
 
   positions: Position[] = [
     {value: 'worker-0', viewValue: 'Registry Worker'},
@@ -20,10 +25,26 @@ export class MedicalStaffComponent implements OnInit {
   ];
 
   showPassword = false;
+  registerMedicalStaffForm: FormGroup;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(
+    private registerMedicalStaffFormBuilder: RegisterFormBuilderService,
+    private notifier: NotifierService,
+    private router: Router,
+    private registerService: RegisterService
+  ) {
+    this.registerMedicalStaffForm = this.registerMedicalStaffFormBuilder.getRegisterMedicalStaffForm();
   }
 
+  registerMedicalStaff() {
+    console.log(this.registerMedicalStaffForm.value);
+    this.registerService.registerMedicalStaff(this.registerMedicalStaffForm.value)
+      .subscribe(({ message }) => {
+          this.router.navigate(['/login']);
+          this.notifier.notify('success', message);
+        },
+        err =>
+          this.notifier.notify('error', err)
+      );
+  }
 }

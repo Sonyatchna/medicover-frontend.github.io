@@ -39,7 +39,7 @@
         <div *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
           <div *ngIf="loginForm.get('password').errors.required" class="error-form-message">Password is required!</div>
           <div *ngIf="loginForm.get('password').errors.minlength" class="error-form-message">Password must be longer than 5!</div>
-          <div *ngIf="loginForm.get('password').errors.maxlength" class="error-form-message">Password must be shorter than 15!</div>
+          <div *ngIf="loginForm.get('password').errors.maxlength" class="error-form-message">Password must be shorter than 17!</div>
         </div>
 
       </div>
@@ -52,7 +52,7 @@
     </form>
 
     <div class="sign-in-button-wrapper">
-      <button mat-stroked-button color="primary" class="btn-forgot-password">Forgot Password</button>
+      <button mat-stroked-button color="primary" class="btn-forgot-password" (click)="forgotPass()">Forgot Password</button>
       <button mat-stroked-button color="primary" class="btn-register" [routerLink]="['../register']">Sign Up</button>
     </div>
 
