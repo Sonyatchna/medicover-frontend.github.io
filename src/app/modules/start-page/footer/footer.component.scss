@@ -1,0 +1,112 @@
+.footer-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+  padding: 0 12.5%;
+  background: rgba(230, 235, 250, 0.56);
+
+  .footer-div-a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+    padding: 30px 0;
+
+    .brand-icon {
+      display: flex;
+      align-items: center;
+      width: 25%;
+      height: 100%;
+
+      .brand-img {
+        filter: saturate(10) contrast(120%) hue-rotate(-30deg);
+        height: 90px;
+        width: 180px;
+      }
+    }
+
+    .addresses-div {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      padding-left: 20%;
+
+      .addresses-text {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        color: #00695c;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .addresses-button {
+        display: flex;
+        position: relative;
+
+        .but-addresses {
+          font-size: 16px;
+          font-weight: 600;
+          height: 42px;
+          width: 140px;
+        }
+      }
+    }
+
+    .networks-div {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      width: 25%;
+
+      .email-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 30%;
+        color: #00695c;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .buttons-div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 70%;
+
+        .but-f-i-y {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .footer-div-b {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+    padding-bottom: 20px;
+
+    .footer-div-b-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: #00695c;
+      font-size: 16px;
+    }
+  }
+}

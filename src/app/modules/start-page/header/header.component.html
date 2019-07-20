@@ -1,0 +1,47 @@
+<div class="header-div">
+  <div class="header-block">
+    <header class="header">
+
+      <div class="brand-icon">
+        <img class="brand-img" src="https://medicover.ua/images/Logo.png">
+      </div>
+
+      <div class="navigation-bar">
+        <button mat-button color="primary">
+          <span class="but-sp">ANALYZES AND PRICES</span>
+        </button>
+
+        <button mat-button color="primary">
+          <span class="but-sp">DEPARTMENTS</span>
+        </button>
+
+        <button mat-button color="primary" [matMenuTriggerFor]="beforeMenu">
+          <span class="but-sp">TO PATIENTS</span>
+          <mat-icon matSuffix>
+            arrow_drop_down
+          </mat-icon>
+        </button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+          <button mat-button color="primary" class="mat-menu-item"><span>ANALYZES AT HOME</span></button>
+          <button mat-button color="primary" class="mat-menu-item"><span>PRE-ORDER</span></button>
+          <button mat-button color="primary" class="mat-menu-item"><span>PREPARATION FOR ANALYZES</span></button>
+        </mat-menu>
+
+        <button mat-button color="primary"
+        ><span class="but-sp">NEWS</span>
+        </button>
+      </div>
+
+      <div class="buttons-block">
+        <button mat-stroked-button color="primary" class="but-bl">
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+        <button mat-stroked-button color="primary" class="but-bl" [routerLink]="['../auth/login']">
+          <mat-icon>person</mat-icon>
+        </button>
+        <button mat-flat-button color="primary" class="but-res">GET RESULT</button>
+      </div>
+
+    </header>
+  </div>
+</div>

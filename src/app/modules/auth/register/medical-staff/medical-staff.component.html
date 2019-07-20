@@ -2,49 +2,37 @@
   <div class="center">
     <mat-form-field class="firstName-input">
       <input matInput placeholder="First Name" formControlName="firstName" mask="S*">
-      <mat-icon matPrefix>
-        account_circle
-      </mat-icon>
+      <mat-icon matPrefix>account_circle</mat-icon>
+      <mat-error *ngIf="registerMedicalStaffForm.get('firstName').invalid && (registerMedicalStaffForm.get('firstName').dirty || registerMedicalStaffForm.get('firstName').touched)">
+        <mat-error *ngIf="registerMedicalStaffForm.get('firstName').errors.required" class="error-form-message">First name is required!</mat-error>
+      </mat-error>
     </mat-form-field>
-
-    <div *ngIf="registerMedicalStaffForm.get('firstName').invalid && (registerMedicalStaffForm.get('firstName').dirty || registerMedicalStaffForm.get('firstName').touched)">
-      <div *ngIf="registerMedicalStaffForm.get('firstName').errors.required" class="error-form-message">First name is required!</div>
-    </div>
 
     <mat-form-field class="secondName-input">
       <input matInput placeholder="Second Name" formControlName="secondName" mask="S*">
-      <mat-icon matPrefix>
-        account_circle
-      </mat-icon>
+      <mat-icon matPrefix>account_circle</mat-icon>
+      <mat-error *ngIf="registerMedicalStaffForm.get('secondName').invalid && (registerMedicalStaffForm.get('secondName').dirty || registerMedicalStaffForm.get('secondName').touched)">
+        <mat-error *ngIf="registerMedicalStaffForm.get('secondName').errors.required" class="error-form-message">Second name is required!</mat-error>
+      </mat-error>
     </mat-form-field>
-
-    <div *ngIf="registerMedicalStaffForm.get('secondName').invalid && (registerMedicalStaffForm.get('secondName').dirty || registerMedicalStaffForm.get('secondName').touched)">
-      <div *ngIf="registerMedicalStaffForm.get('secondName').errors.required" class="error-form-message">Second name is required!</div>
-    </div>
 
     <mat-form-field class="login-input">
       <input matInput placeholder="Email" formControlName="email">
-      <mat-icon matPrefix>
-        contact_mail
-      </mat-icon>
+      <mat-icon matPrefix>contact_mail</mat-icon>
+      <mat-error *ngIf="registerMedicalStaffForm.get('email').invalid && (registerMedicalStaffForm.get('email').dirty || registerMedicalStaffForm.get('email').touched)">
+        <mat-error *ngIf="registerMedicalStaffForm.get('email').errors.required" class="error-form-message">Email is required!</mat-error>
+        <mat-error *ngIf="registerMedicalStaffForm.get('email').errors.pattern" class="error-form-message">Incorrect form of email!</mat-error>
+      </mat-error>
     </mat-form-field>
-
-    <div *ngIf="registerMedicalStaffForm.get('email').invalid && (registerMedicalStaffForm.get('email').dirty || registerMedicalStaffForm.get('email').touched)">
-      <div *ngIf="registerMedicalStaffForm.get('email').errors.required" class="error-form-message">Email is required!</div>
-      <div *ngIf="registerMedicalStaffForm.get('email').errors.pattern" class="error-form-message">Incorrect form of email!</div>
-    </div>
 
     <mat-form-field class="phone-input">
-      <input matInput placeholder="Contact Phone" formControlName="phone" prefix="+38 " mask="(000) 000 00 00">
-      <mat-icon matPrefix>
-        contact_phone
-      </mat-icon>
+      <input matInput placeholder="Contact Phone" formControlName="phone" prefix="+38 (0" mask="00) 000 00 00">
+      <mat-icon matPrefix>contact_phone</mat-icon>
+      <mat-error *ngIf="registerMedicalStaffForm.get('phone').invalid && (registerMedicalStaffForm.get('phone').dirty || registerMedicalStaffForm.get('phone').touched)">
+        <mat-error *ngIf="registerMedicalStaffForm.get('phone').errors.required" class="error-form-message">Contact phone is required!</mat-error>
+        <mat-error *ngIf="registerMedicalStaffForm.get('phone').errors.pattern" class="error-form-message">Incorrect form of contact phone!</mat-error>
+      </mat-error>
     </mat-form-field>
-
-    <div *ngIf="registerMedicalStaffForm.get('phone').invalid && (registerMedicalStaffForm.get('phone').dirty || registerMedicalStaffForm.get('phone').touched)">
-      <div *ngIf="registerMedicalStaffForm.get('phone').errors.required" class="error-form-message">Contact phone is required!</div>
-      <div *ngIf="registerMedicalStaffForm.get('phone').errors.pattern" class="error-form-message">Incorrect form of contact phone!</div>
-    </div>
 
     <mat-form-field class="position-input">
       <mat-label>Position</mat-label>
@@ -53,14 +41,11 @@
           {{position.viewValue}}
         </mat-option>
       </mat-select>
-      <mat-icon matPrefix class="mat-icon-special">
-        assignment_ind
-      </mat-icon>
+      <mat-icon matPrefix class="mat-icon-special">assignment_ind</mat-icon>
+      <mat-error *ngIf="registerMedicalStaffForm.get('position').invalid && (registerMedicalStaffForm.get('position').dirty || registerMedicalStaffForm.get('position').touched)">
+        <mat-error *ngIf="registerMedicalStaffForm.get('position').errors.required" class="error-form-message">Position is required!</mat-error>
+      </mat-error>
     </mat-form-field>
-
-    <div *ngIf="registerMedicalStaffForm.get('position').invalid && (registerMedicalStaffForm.get('position').dirty || registerMedicalStaffForm.get('position').touched)">
-      <div *ngIf="registerMedicalStaffForm.get('position').errors.required" class="error-form-message">Position is required!</div>
-    </div>
 
     <mat-form-field class="password-input">
       <input matInput placeholder="Password" formControlName="password" [type]="showPassword ? 'text' : 'password'">
@@ -70,13 +55,12 @@
       <mat-icon matSuffix (click)="showPassword = !showPassword; $event.stopPropagation()">
         {{ showPassword ? 'visibility' : 'visibility_off' }}
       </mat-icon>
+      <mat-error *ngIf="registerMedicalStaffForm.get('password').invalid && (registerMedicalStaffForm.get('password').dirty || registerMedicalStaffForm.get('password').touched)">
+        <mat-error *ngIf="registerMedicalStaffForm.get('password').errors.required" class="error-form-message">Password is required!</mat-error>
+        <mat-error *ngIf="registerMedicalStaffForm.get('password').errors.minlength" class="error-form-message">Password must be longer than 5!</mat-error>
+        <mat-error *ngIf="registerMedicalStaffForm.get('password').errors.maxlength" class="error-form-message">Password must be shorter than 17!</mat-error>
+      </mat-error>
     </mat-form-field>
-
-    <div *ngIf="registerMedicalStaffForm.get('password').invalid && (registerMedicalStaffForm.get('password').dirty || registerMedicalStaffForm.get('password').touched)">
-      <div *ngIf="registerMedicalStaffForm.get('password').errors.required" class="error-form-message">Password is required!</div>
-      <div *ngIf="registerMedicalStaffForm.get('password').errors.minlength" class="error-form-message">Password must be longer than 5!</div>
-      <div *ngIf="registerMedicalStaffForm.get('password').errors.maxlength" class="error-form-message">Password must be shorter than 17!</div>
-    </div>
 
     <div class="sign-up-button-wrapper">
       <button mat-stroked-button color="primary" class="btn-login" [routerLink]="['../../login']">Log In</button>

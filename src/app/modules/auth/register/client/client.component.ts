@@ -31,7 +31,7 @@ export class ClientComponent {
     console.log(this.registerClientForm.value);
     this.registerService.registerClient(this.registerClientForm.value)
       .subscribe(({ message }) => {
-          this.router.navigate(['/login']);
+          this.router.navigate(['/auth/login']);
           this.notifier.notify('success', message);
         },
         err =>

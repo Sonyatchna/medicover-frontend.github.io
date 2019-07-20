@@ -5,6 +5,6 @@ export const url = `http://localhost:3000`;
 export const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    'Accept': 'application/json'
+    Accept: 'application/json'
   })
 };
