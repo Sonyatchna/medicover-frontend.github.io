@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RegisterFormBuilderService } from "../../../../shared/formBuildersServices/register-form-builder.service";
 import { FormGroup } from "@angular/forms";
-import { RegisterService } from '../../services/register.service';
 import { Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
+import { AuthorizationService } from "../../../../shared/services/authorization.service";
 
 export interface Position {
   value: string;
@@ -31,20 +31,12 @@ export class MedicalStaffComponent {
     private registerMedicalStaffFormBuilder: RegisterFormBuilderService,
     private notifier: NotifierService,
     private router: Router,
-    private registerService: RegisterService
+    private authorizationService: AuthorizationService
   ) {
     this.registerMedicalStaffForm = this.registerMedicalStaffFormBuilder.getRegisterMedicalStaffForm();
   }
 
   registerMedicalStaff() {
-    console.log(this.registerMedicalStaffForm.value);
-    this.registerService.registerMedicalStaff(this.registerMedicalStaffForm.value)
-      .subscribe(({ message }) => {
-          this.router.navigate(['/login']);
-          this.notifier.notify('success', message);
-        },
-        err =>
-          this.notifier.notify('error', err)
-      );
+    this.authorizationService.registerMedicalStaff(this.registerMedicalStaffForm.value);
   }
 }

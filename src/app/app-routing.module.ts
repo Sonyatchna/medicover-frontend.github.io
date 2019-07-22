@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { AuthGuard } from "./guards/auth.guard";
+import { MainPageGuard } from "./guards/main-page.guard";
 
 const routes: Routes = [
   {
@@ -14,11 +16,13 @@ const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: './modules/auth/auth.module#AuthModule'
+    loadChildren: './modules/auth/auth.module#AuthModule',
+    canActivate: [AuthGuard]
   },
   {
     path: 'main-page',
-    loadChildren: './modules/main-page/main-page.module#MainPageModule'
+    loadChildren: './modules/main-page/main-page.module#MainPageModule',
+    canActivate: [MainPageGuard]
   },
   {
     path: '**',

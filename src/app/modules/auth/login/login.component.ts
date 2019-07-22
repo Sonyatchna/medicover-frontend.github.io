@@ -3,7 +3,7 @@ import { LoginFormBuilderService } from "../../../shared/formBuildersServices/lo
 import { FormGroup } from "@angular/forms";
 import { Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
-import {AuthorizationService} from "../../../shared/services/authorization.service";
+import { AuthorizationService } from "../../../shared/services/authorization.service";
 
 @Component({
   selector: 'app-login',

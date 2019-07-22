@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RegisterFormBuilderService } from "../../../../shared/formBuildersServices/register-form-builder.service";
 import { FormGroup } from "@angular/forms";
-import { RegisterService } from '../../services/register.service';
 import { Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
+import { AuthorizationService } from "../../../../shared/services/authorization.service";
 
 @Component({
   selector: 'app-client',
@@ -22,21 +22,13 @@ export class ClientComponent {
     private registerClientFormBuilder: RegisterFormBuilderService,
     private notifier: NotifierService,
     private router: Router,
-    private registerService: RegisterService
+    private authorizationService: AuthorizationService
   ) {
     this.registerClientForm = this.registerClientFormBuilder.getRegisterClientForm();
   }
 
   registerClient() {
-    console.log(this.registerClientForm.value);
-    this.registerService.registerClient(this.registerClientForm.value)
-      .subscribe(({ message }) => {
-          this.router.navigate(['/auth/login']);
-          this.notifier.notify('success', message);
-        },
-        err =>
-          this.notifier.notify('error', err)
-      );
+    this.authorizationService.registerClient(this.registerClientForm.value);
   }
 
 }
