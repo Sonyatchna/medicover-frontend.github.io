@@ -5,6 +5,7 @@ import { ParticlesComponent } from './components/particles/particles.component';
 import { ParticlesModule } from 'angular-particle';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
+import { NavigationEnd, Router } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -22,8 +23,19 @@ import { DomSanitizer } from "@angular/platform-browser";
 export class SharedModule {
   constructor(
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+    private router: Router
   ) {
+
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0);
+    });
+
+    // icons
+
     this.matIconRegistry.addSvgIcon(
       "facebook",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/social-media/facebook.svg")

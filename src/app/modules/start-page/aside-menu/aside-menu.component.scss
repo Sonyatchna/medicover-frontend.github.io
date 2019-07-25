@@ -1,0 +1,14 @@
+.suggestion {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+  padding-left: 15px;
+
+  :hover {
+    color: #43c9c6;
+    cursor: pointer;
+  }
+}

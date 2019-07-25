@@ -1,0 +1,121 @@
+.discount-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  height: 879px;
+  width: 1194px;
+
+  .suggestion-div {
+    display: flex;
+    height: 650px;
+    width: 25%;
+    background: rgba(230, 235, 250, 0.56);
+  }
+
+  .discount {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    width: 75%;
+
+    .discount-header {
+      display: flex;
+      flex-direction: column;
+      margin-left: 30px;
+      color: #00695c;
+    }
+
+    .discount-list {
+      display: flex;
+      flex-direction: column;
+      margin-left: 30px;
+      height: 449px;
+      width: 835px;
+
+      .discount-head-text {
+        display: flex;
+        margin-bottom: 15px;
+        height: 21px;
+        width: 100%;
+        color: #00695c;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .discount-text {
+        display: flex;
+        margin-bottom: 15px;
+        height: 18px;
+        width: 100%;
+        color: #00695c;
+      }
+
+      .discount-list-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        height: 61px;
+        width: 100%;
+        color: #00695c;
+
+        img {
+          height: 61px;
+          width: 61px;
+          margin-right: 10px;
+          filter: saturate(0.7) contrast(120%) hue-rotate(-30deg);
+        }
+      }
+    }
+
+    .discount-steps {
+      display: flex;
+      flex-direction: column;
+      margin-left: 30px;
+      margin-bottom: 30px;
+      height: 240px;
+      width: 835px;
+
+      .discount-steps-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 30px;
+        height: 50px;
+        width: 100%;
+        color: #00695c;
+
+        .discount-steps-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 50px;
+          height: 50px;
+          border: #00695c 1px solid;
+          border-radius: 50%;
+        }
+
+        .discount-steps-inf {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          height: 100%;
+          margin-left: 20px;
+
+          .discount-steps-head-text {
+            width: 100%;
+            font-size: 18px;
+            font-weight: 600;
+          }
+
+          .discount-steps-text {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

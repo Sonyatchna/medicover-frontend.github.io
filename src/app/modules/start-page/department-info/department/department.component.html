@@ -1,0 +1,8 @@
+<div class="department-text">
+  <span (click)="setMapView(department.latLng)">{{ department.name }}</span>
+</div>
+<div class="department-schedule">
+  <div></div>
+  <div *ngFor="let div of department.scheduleDivsText">{{ div }}</div>
+  <div></div>
+</div>

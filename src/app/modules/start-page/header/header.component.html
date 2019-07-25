@@ -3,7 +3,7 @@
     <header class="header">
 
       <div class="brand-icon">
-        <img class="brand-img" src="https://medicover.ua/images/Logo.png">
+        <img class="brand-img" src="https://medicover.ua/images/Logo.png" (click)="toStartPage()">
       </div>
 
       <div class="navigation-bar">
@@ -22,9 +22,9 @@
           </mat-icon>
         </button>
         <mat-menu #beforeMenu="matMenu" xPosition="before">
-          <button mat-button color="primary" class="mat-menu-item"><span>ANALYZES AT HOME</span></button>
-          <button mat-button color="primary" class="mat-menu-item"><span>PRE-ORDER</span></button>
-          <button mat-button color="primary" class="mat-menu-item"><span>PREPARATION FOR ANALYZES</span></button>
+          <button mat-button color="primary" class="mat-menu-item" [routerLink]="['./home-analyzes']"><span>ANALYZES AT HOME</span></button>
+          <button mat-button color="primary" class="mat-menu-item" [routerLink]="['./discount-info']"><span>PRE-ORDER</span></button>
+          <button mat-button color="primary" class="mat-menu-item" [routerLink]="['./preparation-info']"><span>PREPARATION FOR ANALYZES</span></button>
         </mat-menu>
 
         <button mat-button color="primary"

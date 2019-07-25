@@ -1,4 +1,4 @@
-import { SliderInfoModel } from "../interfaces/slider-info.model";
+import { SliderInfoModel } from "../../interfaces/start-page/slider-info.model";
 
 export const startPageSliderInfo: SliderInfoModel = {
   imageUrlArray: [

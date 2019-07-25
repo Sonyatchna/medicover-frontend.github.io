@@ -1,7 +1,7 @@
 import { Component, DoCheck, OnInit, ViewChild } from '@angular/core';
 import { animate, state, style, transition, trigger } from "@angular/animations";
-import { startPageSliderInfo } from '../../../shared/constants/start-page-slider-info';
-import { SliderText } from "../../../shared/interfaces/slider-info.model";
+import { startPageSliderInfo } from '../../../shared/constants/start-page/start-page-slider-info';
+import { SliderText } from "../../../shared/interfaces/start-page/slider-info.model";
 
 @Component({
   selector: 'app-main-info',
