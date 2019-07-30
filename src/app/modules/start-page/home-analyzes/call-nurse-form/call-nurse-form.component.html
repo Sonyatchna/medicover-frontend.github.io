@@ -1,3 +1,122 @@
-<form action="">
-  dxvd
+<form [formGroup]="callNurseForm" (ngSubmit)="callNurse()">
+  <div class="center">
+    <div class="center-half">
+      <mat-form-field class="firstName-input">
+        <input matInput placeholder="First Name" formControlName="firstName" mask="S*">
+        <mat-icon matPrefix>account_circle</mat-icon>
+        <mat-error
+          *ngIf="callNurseForm.get('firstName').invalid && (callNurseForm.get('firstName').dirty || callNurseForm.get('firstName').touched)">
+          <mat-error *ngIf="callNurseForm.get('firstName').errors.required" class="error-form-message">
+            First name is required!
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="secondName-input">
+        <input matInput placeholder="Second Name" formControlName="secondName" mask="S*">
+        <mat-icon matPrefix>account_circle</mat-icon>
+        <mat-error
+          *ngIf="callNurseForm.get('secondName').invalid && (callNurseForm.get('secondName').dirty || callNurseForm.get('secondName').touched)">
+          <mat-error *ngIf="callNurseForm.get('secondName').errors.required" class="error-form-message">
+            Second name is required!
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="email-input">
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-icon matPrefix>contact_mail</mat-icon>
+        <mat-error
+          *ngIf="callNurseForm.get('email').invalid && (callNurseForm.get('email').dirty || callNurseForm.get('email').touched)">
+          <mat-error *ngIf="callNurseForm.get('email').errors.required" class="error-form-message">
+            Email is required!
+          </mat-error>
+          <mat-error *ngIf="callNurseForm.get('email').errors.pattern" class="error-form-message">
+            Incorrect form of email!
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="phone-input">
+        <input matInput placeholder="Contact Phone" formControlName="phone" prefix="+38 (0" mask="00) 000 00 00">
+        <mat-icon matPrefix>contact_phone</mat-icon>
+        <mat-error
+          *ngIf="callNurseForm.get('phone').invalid && (callNurseForm.get('phone').dirty || callNurseForm.get('phone').touched)">
+          <mat-error *ngIf="callNurseForm.get('phone').errors.required" class="error-form-message">
+            Contact phone is required!
+          </mat-error>
+          <mat-error *ngIf="callNurseForm.get('phone').errors.pattern" class="error-form-message">
+            Incorrect form of contact phone!
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <div class="center-half">
+
+      <mat-form-field class="dateOfArrival-input">
+        <input
+          matInput
+          placeholder="Date of Arrival"
+          formControlName="arrivalDate"
+          [matDatepicker]="picker"
+          [min]="minDate"
+          [max]="maxDate"
+          readonly
+        >
+        <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>arrow_drop_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker
+          #picker
+          startView="multi-year"
+          panelClass="example-month-picker"
+        >
+        </mat-datepicker>
+        <mat-icon matPrefix (click)="$event.stopPropagation()">date_range</mat-icon>
+        <mat-error
+          *ngIf="callNurseForm.get('arrivalDate').invalid && (callNurseForm.get('arrivalDate').dirty || callNurseForm.get('arrivalDate').touched)">
+          <mat-error *ngIf="callNurseForm.get('arrivalDate').errors.required" class="error-form-message">
+            Date of arrival is required!
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="address-input">
+        <input matInput placeholder="Address" formControlName="address">
+        <mat-icon matPrefix>location_on</mat-icon>
+        <mat-error
+          *ngIf="callNurseForm.get('address').invalid && (callNurseForm.get('address').dirty || callNurseForm.get('address').touched)">
+          <mat-error *ngIf="callNurseForm.get('address').errors.required" class="error-form-message">
+            Address is required!
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="comment-input">
+        <textarea
+          matInput
+          placeholder="Comment (kind of research)"
+          matTextareaAutosize
+          formControlName="comment"
+          matAutosizeMaxRows=1
+          matAutosizeMinRows=1
+        >
+        </textarea>
+        <mat-error
+          *ngIf="callNurseForm.get('comment').invalid && (callNurseForm.get('comment').dirty || callNurseForm.get('comment').touched)">
+          <mat-error *ngIf="callNurseForm.get('comment').errors.required" class="error-form-message">
+            Comment is required!
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
+      <div class="send-button-wrapper">
+        <button mat-flat-button color="primary" type="submit" class="btn-send">Send</button>
+      </div>
+
+    </div>
+
+  </div>
 </form>

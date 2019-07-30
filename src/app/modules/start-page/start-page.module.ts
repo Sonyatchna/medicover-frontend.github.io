@@ -15,6 +15,8 @@ import { PreparationInfoComponent } from './preparation-info/preparation-info.co
 import { DepartmentComponent } from './department-info/department/department.component';
 import { HomeAnalyzesComponent } from './home-analyzes/home-analyzes.component';
 import { CallNurseFormComponent } from './home-analyzes/call-nurse-form/call-nurse-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {NgxMaskModule} from "ngx-mask";
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { CallNurseFormComponent } from './home-analyzes/call-nurse-form/call-nur
     StartPageRoutingModule,
     MaterialModule,
     MatMenuModule,
-    SlideshowModule
+    SlideshowModule,
+    ReactiveFormsModule,
+    NgxMaskModule
   ]
 })
 export class StartPageModule { }

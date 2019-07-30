@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { RegisterFormBuilderService } from "../../../../shared/formBuildersServices/register-form-builder.service";
 import { FormGroup } from "@angular/forms";
-import { Router } from '@angular/router';
-import { NotifierService } from 'angular-notifier';
+import { RegisterFormBuilderService } from "../../../../shared/formBuildersServices/register-form-builder.service";
 import { AuthorizationService } from "../../../../shared/services/authorization.service";
 
 @Component({
@@ -20,8 +18,6 @@ export class ClientComponent {
 
   constructor(
     private registerClientFormBuilder: RegisterFormBuilderService,
-    private notifier: NotifierService,
-    private router: Router,
     private authorizationService: AuthorizationService
   ) {
     this.registerClientForm = this.registerClientFormBuilder.getRegisterClientForm();

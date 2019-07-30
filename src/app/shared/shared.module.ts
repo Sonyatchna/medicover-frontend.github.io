@@ -48,5 +48,29 @@ export class SharedModule {
       "youtube",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/social-media/youtube.svg")
     );
+    this.matIconRegistry.addSvgIcon(
+      "baby",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/start-page-icons/baby.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "nurse",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/start-page-icons/nurse.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "clock",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/start-page-icons/clock.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "ambulance",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/start-page-icons/ambulance.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "family",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/start-page-icons/family.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "map-location",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/start-page-icons/map-location.svg")
+    );
   }
 }

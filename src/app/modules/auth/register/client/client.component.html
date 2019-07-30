@@ -5,8 +5,8 @@
       <mat-icon matPrefix>account_circle</mat-icon>
       <mat-error
         *ngIf="registerClientForm.get('firstName').invalid && (registerClientForm.get('firstName').dirty || registerClientForm.get('firstName').touched)">
-        <mat-error *ngIf="registerClientForm.get('firstName').errors.required" class="error-form-message">First name is
-          required!
+        <mat-error *ngIf="registerClientForm.get('firstName').errors.required" class="error-form-message">
+          First name is required!
         </mat-error>
       </mat-error>
     </mat-form-field>
@@ -16,8 +16,8 @@
       <mat-icon matPrefix>account_circle</mat-icon>
       <mat-error
         *ngIf="registerClientForm.get('secondName').invalid && (registerClientForm.get('secondName').dirty || registerClientForm.get('secondName').touched)">
-        <mat-error *ngIf="registerClientForm.get('secondName').errors.required" class="error-form-message">Second name
-          is required!
+        <mat-error *ngIf="registerClientForm.get('secondName').errors.required" class="error-form-message">
+          Second name is required!
         </mat-error>
       </mat-error>
     </mat-form-field>
@@ -27,11 +27,11 @@
       <mat-icon matPrefix>contact_mail</mat-icon>
       <mat-error
         *ngIf="registerClientForm.get('email').invalid && (registerClientForm.get('email').dirty || registerClientForm.get('email').touched)">
-        <mat-error *ngIf="registerClientForm.get('email').errors.required" class="error-form-message">Email is
-          required!
+        <mat-error *ngIf="registerClientForm.get('email').errors.required" class="error-form-message">
+          Email is required!
         </mat-error>
-        <mat-error *ngIf="registerClientForm.get('email').errors.pattern" class="error-form-message">Incorrect form of
-          email!
+        <mat-error *ngIf="registerClientForm.get('email').errors.pattern" class="error-form-message">
+          Incorrect form of email!
         </mat-error>
       </mat-error>
     </mat-form-field>
@@ -41,11 +41,11 @@
       <mat-icon matPrefix>contact_phone</mat-icon>
       <mat-error
         *ngIf="registerClientForm.get('phone').invalid && (registerClientForm.get('phone').dirty || registerClientForm.get('phone').touched)">
-        <mat-error *ngIf="registerClientForm.get('phone').errors.required" class="error-form-message">Contact phone is
-          required!
+        <mat-error *ngIf="registerClientForm.get('phone').errors.required" class="error-form-message">
+          Contact phone is required!
         </mat-error>
-        <mat-error *ngIf="registerClientForm.get('phone').errors.pattern" class="error-form-message">Incorrect form of
-          contact phone!
+        <mat-error *ngIf="registerClientForm.get('phone').errors.pattern" class="error-form-message">
+          Incorrect form of contact phone!
         </mat-error>
       </mat-error>
     </mat-form-field>
@@ -72,8 +72,8 @@
       <mat-icon matPrefix (click)="$event.stopPropagation()">date_range</mat-icon>
       <mat-error
         *ngIf="registerClientForm.get('birthDate').invalid && (registerClientForm.get('birthDate').dirty || registerClientForm.get('birthDate').touched)">
-        <mat-error *ngIf="registerClientForm.get('birthDate').errors.required" class="error-form-message">Date of birth
-          is required!
+        <mat-error *ngIf="registerClientForm.get('birthDate').errors.required" class="error-form-message">
+          Date of birth is required!
         </mat-error>
       </mat-error>
     </mat-form-field>
@@ -86,14 +86,14 @@
       </mat-icon>
       <mat-error
         *ngIf="registerClientForm.get('password').invalid && (registerClientForm.get('password').dirty || registerClientForm.get('password').touched)">
-        <mat-error *ngIf="registerClientForm.get('password').errors.required" class="error-form-message">Password is
-          required!
+        <mat-error *ngIf="registerClientForm.get('password').errors.required" class="error-form-message">
+          Password is required!
         </mat-error>
-        <mat-error *ngIf="registerClientForm.get('password').errors.minlength" class="error-form-message">Password must
-          be longer than 5!
+        <mat-error *ngIf="registerClientForm.get('password').errors.minlength" class="error-form-message">
+          Password must be longer than 5!
         </mat-error>
-        <mat-error *ngIf="registerClientForm.get('password').errors.maxlength" class="error-form-message">Password must
-          be shorter than 17!
+        <mat-error *ngIf="registerClientForm.get('password').errors.maxlength" class="error-form-message">
+          Password must be shorter than 17!
         </mat-error>
       </mat-error>
     </mat-form-field>

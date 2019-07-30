@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject} from "rxjs";
-import {HttpClient} from "@angular/common/http";
-import {NotifierService} from "angular-notifier";
-import {url, httpOptions} from '../configs/config';
-import {Router} from "@angular/router";
-import {localStorageItems} from "../constants/local-storage-items";
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { NotifierService } from "angular-notifier";
+import { url, httpOptions } from '../configs/config';
+import { Router } from "@angular/router";
+import { localStorageItems } from "../constants/local-storage-items";
 
 @Injectable({
   providedIn: 'root'
