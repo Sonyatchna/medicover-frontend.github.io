@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { NotifierService } from "angular-notifier";
-import { url, httpOptions } from '../configs/config';
+import { url } from '../configs/config';
 import { Router } from "@angular/router";
 import { localStorageItems } from "../constants/local-storage-items";
 
@@ -35,7 +35,7 @@ export class AuthorizationService {
   }
 
   public login(body) {
-    this.http.post(`${url}/auth/login`, body, httpOptions).subscribe((res: any) => {
+    this.http.post(`${url}/auth/login`, body).subscribe((res: any) => {
         localStorage.setItem(localStorageItems.token, res.token);
         this.$userToken.next(res.token);
 
@@ -56,7 +56,7 @@ export class AuthorizationService {
   }
 
   public registerClient(body) {
-    this.http.post(`${url}/auth/register/client`, body, httpOptions).subscribe((res: any) => {
+    this.http.post(`${url}/auth/register/client`, body).subscribe((res: any) => {
         this.router.navigate(['/auth/login']);
         this.notifier.notify('success', res.message);
       },
@@ -65,7 +65,7 @@ export class AuthorizationService {
   }
 
   public registerMedicalStaff(body) {
-    this.http.post(`${url}/auth/register/medical-staff`, body, httpOptions).subscribe((res: any) => {
+    this.http.post(`${url}/auth/register/medical-staff`, body).subscribe((res: any) => {
         this.router.navigate(['/auth/login']);
         this.notifier.notify('success', res.message);
       },

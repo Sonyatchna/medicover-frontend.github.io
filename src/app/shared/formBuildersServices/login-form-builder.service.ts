@@ -12,8 +12,15 @@ export class LoginFormBuilderService {
 
   getLoginForm() {
     return this.formBuilder.group({
-      email: new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')])),
-      password: new FormControl('', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(16)]))
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')
+      ])),
+      password: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(16)
+      ]))
     });
   }
 }

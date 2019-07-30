@@ -7,9 +7,10 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NotifierModule } from 'angular-notifier';
 import { NgxMaskModule } from 'ngx-mask';
+import { TokenInterceptor } from './shared/interceptors/token-interceptor';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,13 @@ import { NgxMaskModule } from 'ngx-mask';
       }
     })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

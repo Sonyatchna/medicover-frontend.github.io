@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/internal/operators';
-import { url, httpOptions } from '../../../shared/configs/config';
+import { url } from '../../../shared/configs/config';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class RegisterService {
 
   registerClient(registerBody) {
     return this.httpClient
-      .post(`${url}/auth/register/client`, registerBody, httpOptions)
+      .post(`${url}/auth/register/client`, registerBody)
       .pipe(
         catchError(this._handleError),
         map((res: any) => res)
@@ -23,7 +23,7 @@ export class RegisterService {
 
   registerMedicalStaff(registerBody) {
     return this.httpClient
-      .post(`${url}/auth/register/medical-staff`, registerBody, httpOptions)
+      .post(`${url}/auth/register/medical-staff`, registerBody)
       .pipe(
         catchError(this._handleError),
         map((res: any) => res)

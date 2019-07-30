@@ -1,26 +1,17 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from "rxjs";
-import { localStorageItems } from "../constants/local-storage-items";
+import { HttpClient } from '@angular/common/http';
+import { url } from '../configs/config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CallNurseService {
 
-  public $isAuthorized: BehaviorSubject<boolean> = new BehaviorSubject(false);
-
-  constructor() {
-    this.setFieldFromLocalStorage(this.$isAuthorized, localStorageItems.isAuthorized);
-  }
-
-  private setFieldFromLocalStorage(subject, fieldName) {
-    const field = localStorage.getItem(fieldName);
-    if (field) {
-      subject.next(field);
-    }
-  }
+  constructor(
+    private httpClient: HttpClient
+  ) { }
 
   public callNurse(body) {
-
+    return this.httpClient.post(`${url}/client/call-nurse`, body);
   }
 }

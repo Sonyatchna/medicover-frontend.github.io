@@ -1,4 +1,4 @@
-<form [formGroup]="callNurseForm" (ngSubmit)="callNurse()">
+<form [formGroup]="callNurseForm">
   <div class="center">
     <div class="center-half">
       <mat-form-field class="firstName-input">
@@ -70,7 +70,6 @@
         </mat-datepicker-toggle>
         <mat-datepicker
           #picker
-          startView="multi-year"
           panelClass="example-month-picker"
         >
         </mat-datepicker>
@@ -109,7 +108,7 @@
       </mat-form-field>
 
       <div class="send-button-wrapper">
-        <button mat-flat-button color="primary" type="submit" class="btn-send">Send</button>
+        <button mat-flat-button color="primary" (click)="callNurse()" class="btn-send">Send</button>
       </div>
 
     </div>
