@@ -95,15 +95,11 @@
       </mat-form-field>
 
       <mat-form-field class="comment-input">
-        <textarea
+        <input
           matInput
           placeholder="Comment (kind of research)"
-          matTextareaAutosize
           formControlName="comment"
-          matAutosizeMaxRows=1
-          matAutosizeMinRows=1
         >
-        </textarea>
         <mat-error
           *ngIf="callNurseForm.get('comment').invalid && (callNurseForm.get('comment').dirty || callNurseForm.get('comment').touched)">
           <mat-error *ngIf="callNurseForm.get('comment').errors.required" class="error-form-message">

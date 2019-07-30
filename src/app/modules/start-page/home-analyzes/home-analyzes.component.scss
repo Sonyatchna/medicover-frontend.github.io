@@ -83,10 +83,12 @@
         width: 750px;
         color: #00695c;
         border: 1px solid #00695c;
-        height: 350px;
+        height: 310px;
 
         app-call-nurse-form {
           height: 100%;
+          display: flex;
+          width: 100%;
         }
       }
     }
